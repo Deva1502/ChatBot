@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   const [messages, setMessages] = useState([
     {
-      text: "Hi there! I'm Gemini AI. How can I help you today?",
+      text: "Hi there! I'm Chantty AI. How can I help you today?",
       isUser: false,
     },
   ]);
@@ -38,8 +38,7 @@ function App() {
     try {
       // Make API call to Gemini
       const response = await axios({
-        url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAccwDqbWVTL5nBWi4L_C8FRu018lKRCwA",
-        method: "post",
+        url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${import.meta.env.VITE_GOOGLE_API_KEY}`,
         data: {
           contents: [
             {
